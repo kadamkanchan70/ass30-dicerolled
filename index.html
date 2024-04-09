@@ -4,8 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Rolled</title>
+    <style>
+        body{
+            background-color: #FFFFFF;
+background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
+
+            min-height: 100vh;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .title{
+            font-size: 60px;
+            text-align: center;
+        }
+        .container{
+            width: 400px;
+            height: 200px;
+            display: block;
+            padding: 10px;
+            margin: 30px auto;
+        }
+        .Dice{
+            height: 190px;
+            display: block;
+            padding: 30px;
+            margin: 10px auto;
+        }
+        .btn-dice{
+            width: 180px;
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            padding: 12px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1 class="title">Roll Dice</h1>
+    <div class="container">
+        <img src="./img/main.png" class="Dice" id="dice-img"/>
+        <button type="button" class="btn-dice" onclick="roll()"><b>Roll Dice</b></button>
+    </div>
+
+    <script>
+        function roll(){
+            const min = 1;
+            const max = 6;
+            const number = Math.round(Math.random() * (max - min)) + min;
+            const Element = document.getElementById('dice-img');
+            switch(number){
+                case 1:
+                    Element.src = './img/1.png';
+                    break;
+                case 2:
+                    Element.src = './img/2.png';
+                    break;
+                case 3:
+                    Element.src = './img/3.png';
+                    break;
+                case 4:
+                    Element.src = './img/4.png';
+                    break;
+                case 5:
+                    Element.src = './img/5.png';
+                    break;
+                case 6:
+                    Element.src = './img/6.png';
+                    break;
+        }
+    }
+    </script>
 </body>
 </html>
